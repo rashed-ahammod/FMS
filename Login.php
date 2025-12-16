@@ -16,13 +16,17 @@
         background-color: #ffffff;
         padding:20px;
         border-radius: 10px;
-        width 300px;
+        width: 450px;
+        height: 500px;
         margin: auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        
     }
 </style>
 <body>
+    <center>
     <h1>Login</h1>
+    </center>
 
     <form onsubmit="return handlesubmit()">
         Username:<br>
