@@ -20,3 +20,14 @@
         margin: auto;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     }
+</style>
+<body>
+    <h1>Login</h1>
+
+    <form onsubmit="return handlesubmit()">
+        Username:<br>
+        <input type="text" id="username" name="username" required><br><br>
+        Password:<br>
+        <input type="password" id="password" name="password" required><br><br>
+        <input type="submit" value="Login">
+    </form>
