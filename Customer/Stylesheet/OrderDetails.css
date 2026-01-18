@@ -49,8 +49,8 @@ body {
 }
 
 .status.delivered {
-    background: #e2e3e5;
-    color: #383d41;
+    background-color: #cce5ff;
+    color: #004085;
 }
 
 .status.cancelled {

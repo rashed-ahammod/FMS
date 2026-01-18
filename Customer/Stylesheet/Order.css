@@ -59,28 +59,28 @@ body {
 }
 
 .status.pending {
-    background-color: #fff3cd;
+    background: #fff3cd;
     color: #856404;
 }
 
 .status.cancelled {
-    background-color: #f8d7da;
-    color: #842029;
+    background: #f8d7da;
+    color: #721c24;
 }
 
 .status.delivered {
-    background-color: #d1e7dd;
-    color: #0f5132;
-}
-
-.status.ready {
     background-color: #cce5ff;
     color: #004085;
 }
 
+.status.ready {
+    background: #d4edda;
+    color: #155724;
+}
+
 .status.cooking {
-    background-color: #e2e3e5;
-    color: #383d41;
+    background: #cce5ff;
+    color: #004085;
 }
 .order-card a {
     display: inline-block;
