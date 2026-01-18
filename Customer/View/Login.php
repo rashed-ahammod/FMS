@@ -26,10 +26,10 @@ include '../Controller Logic/logincontroller.php';
         <?php echo $passErr; ?>
         
         <br><br><br><br>
-        <button type="submit">Login</button>
+        <button type="submit" name="Login_btn">Login</button>
 
         <div class="links">
-            <a href="">Not a user? Sign Up</a><br>
+            <a href="Registration.php">Not a user? Sign Up</a><br>
             <a href="">Forgot Password?</a><br>
     </form>
 </body>

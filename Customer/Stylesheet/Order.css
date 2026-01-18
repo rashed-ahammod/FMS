@@ -1,0 +1,123 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+}
+
+.orders-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+
+    transform: scale(1.08);
+    transform-origin: top center;
+}
+
+.orders-section {
+    width: 50%;
+    max-width: 720px;
+}
+
+.orders-section h2 {
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-weight: 700;
+    color: #111;
+}
+
+.order-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 18px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    position: relative;
+}
+
+.order-card strong {
+    font-size: 15px;
+    display: block;
+    margin-bottom: 6px;
+}
+
+.order-card {
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.order-card .status {
+    position: absolute;
+    top: 18px;
+    right: 20px;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 20px;
+}
+
+.status.pending {
+    background-color: #fff3cd;
+    color: #856404;
+}
+
+.status.cancelled {
+    background-color: #f8d7da;
+    color: #842029;
+}
+
+.status.delivered {
+    background-color: #d1e7dd;
+    color: #0f5132;
+}
+
+.status.ready {
+    background-color: #cce5ff;
+    color: #004085;
+}
+
+.status.cooking {
+    background-color: #e2e3e5;
+    color: #383d41;
+}
+.order-card a {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #0b2239;
+    color: #ffffff;
+    text-decoration: none;
+    padding: 6px 14px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.order-card a:hover {
+    background-color: #091b2d;
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: #ddd;
+    margin: 30px 0;
+}
+
+.back-dashboard {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 18px;
+    background-color: #02182c;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.back-dashboard:hover {
+    opacity: 0.9;
+}
+
