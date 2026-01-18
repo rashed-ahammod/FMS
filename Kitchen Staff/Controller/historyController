@@ -1,0 +1,6 @@
+<?php
+require_once '../Model/orderHistoryModel.php';
+
+
+$orders = getOrderHistory();
+$todaySummary = getTodaySummary();

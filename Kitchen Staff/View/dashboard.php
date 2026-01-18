@@ -19,7 +19,7 @@
 </div>
 </div>
 <div class="dashboard">
-    <h1>Kitchen Staff Dashboard<h1>
+    <h1>Kitchen Staff Dashboard</h1>
         <div class="feature_list">
             <a href="../View/manage_menu.php" class ="feature">
             <h2>Manage Menu</h2>

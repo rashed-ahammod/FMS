@@ -1,4 +1,4 @@
-alert("JS LOADED");
+
 
 function UpdateStatus(menuId) {
 
