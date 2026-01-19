@@ -116,3 +116,110 @@ body {
 hr {
     margin: 20px 0;
 }
+
+.review-box {
+    max-width: 520px;
+    margin: 30px auto;
+    background: #f8f9fa;
+    padding: 22px;
+    border-radius: 14px;
+    text-align: center;
+}
+
+.review-box h3 {
+    margin-bottom: 12px;
+    color: #02182c;
+}
+
+.review-box p {
+    font-size: 15px;
+    color: #333;
+}
+
+/* Kitchen reply */
+.reply-box {
+    margin-top: 15px;
+    background: #eef6ff;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.reply-box h4 {
+    margin-bottom: 6px;
+    color: #004085;
+}
+
+.pending-reply {
+    margin-top: 10px;
+    font-style: italic;
+    color: #777;
+}
+
+.order-actions {
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Back button */
+.btn.back {
+    background: #02182c;
+    color: white;
+}
+
+/* Review button */
+.btn.review {
+    background: #198754;
+    color: white;
+}
+
+/* Reviewed label */
+.reviewed-label {
+    padding: 8px 16px;
+    background: #e9ecef;
+    color: #6c757d;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Hover */
+.btn:hover {
+    opacity: 0.9;
+}
+
+/* FIX LAYOUT */
+.bottom-section {
+    display: flex;
+    align-items: stretch;
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.review-area {
+    flex: 2;
+}
+
+.action-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    justify-content: center;
+}
+
+/* Divider line */
+.divider {
+    width: 1px;
+    background: #ccc;
+}
+
+/* Fix total spacing */
+.total-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 18px;
+    margin-top: 10px;
+}
+

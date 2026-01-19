@@ -45,11 +45,33 @@ while ($item = mysqli_fetch_assoc($items)) {
 <hr>
 
 <div class="total-row">
-
-<strong>Total</strong>
-<strong>Total: Tk <?php echo $total; ?></strong>
-
+        <strong>Total</strong>
+        <strong>Tk <?php echo $total; ?></strong>
 </div>
+
+<hr>
+
+ <?php if ($has_feedback) { ?>
+        <hr>
+
+        <div class="review-box">
+            <h3>Your Review</h3>
+            <p><?php echo $feedbackData['feedback_message']; ?></p>
+
+            <?php if (!empty($feedbackData['feedback_reply'])) { ?>
+                <div class="reply-box">
+                    <strong>Kitchen Reply</strong>
+                    <p><?php echo $feedbackData['feedback_reply']; ?></p>
+                </div>
+            <?php } else { ?>
+                <p class="pending-reply">
+                    Waiting for kitchen reply...
+                </p>
+            <?php } ?>
+        </div>
+    <?php } ?>
+
+    <hr>
 
 <div class="order-actions">
 <a href="Order.php" class="btn back">← Back to Orders</a>
@@ -66,7 +88,23 @@ while ($item = mysqli_fetch_assoc($items)) {
         </button>
     </form>
 <?php } ?>
-</div>
+
+<?php if (
+            strtolower($order['order_status']) === 'delivered'
+            && !$has_feedback
+        ) { ?>
+            <a href="Review.php?order_id=<?php echo $order['order_id']; ?>"
+               class="btn review">
+                Write Review
+            </a>
+        <?php } ?>
+
+        <?php if ($has_feedback) { ?>
+            <span class="reviewed-label">
+                Reviewed
+            </span>
+        <?php } ?>
+       </div>
 </div>
 
 </body>

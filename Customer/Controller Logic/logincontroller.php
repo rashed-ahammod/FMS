@@ -4,8 +4,19 @@ session_start();
 
 include '../Model/db.php';
 
-if (isset($_SESSION['user_id']) || isset($_SESSION['admin'])) {
-    return;
+$email = $password = "";
+$emailErr = $passErr = "";
+$loginSuccess = false;
+
+
+if (isset($_SESSION['admin'])) {
+    header("Location: /FMS/Kitchen Staff/View/dashboard.php");
+    exit();
+}
+
+if (isset($_SESSION['user_id'])) {
+    header("Location: /FMS/Customer/View/CustomerDashboard.php");
+    exit();
 }
 
 if (!isset($_POST['Login_btn']) && isset($_COOKIE['remember_role'])) {
@@ -34,11 +45,6 @@ if (!isset($_POST['Login_btn']) && isset($_COOKIE['remember_role'])) {
     }
 }
 
-$email = $password = "";
-$emailErr = $passErr = "";
-$loginSuccess = false;
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     
     // Validate email
@@ -62,13 +68,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check database
     if (empty($emailErr) && empty($passErr))
     {
-
-        if ($email === 'admin@gmail.com' && $password === '123') {
+        
+        if ($email === 'admin' && $password === '123') {
 
         $_SESSION['admin'] = true;
-        
 
-         if (isset($_POST['remember_me'])) {
+        if (isset($_POST['remember_me'])) {
                 setcookie("remember_email", $email, time() + (86400 * 7), "/");
                 setcookie("remember_role", "admin", time() + (86400 * 7), "/");
             }
@@ -94,8 +99,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['Email'] = $row['Email'];
-            $_SESSION['Name']    = $row['Name'];
             $_SESSION['accountType'] = 'customer';
+            $_SESSION['Name'] = $row['Name'];
             $_SESSION['cart'] = [];
 
             if (isset($_POST['remember_me'])) {

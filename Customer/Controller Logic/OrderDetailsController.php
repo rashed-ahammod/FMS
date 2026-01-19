@@ -39,4 +39,20 @@ $items = mysqli_query(
      JOIN menu m ON oi.menu_id = m.menu_id
      WHERE oi.order_id = $order_id"
 );
+
+//  Check if this order already has feedback
+$feedback_q = mysqli_query(
+    $conn,
+    "SELECT feedback_message, feedback_reply
+     FROM feedback
+     WHERE order_id = $order_id"
+);
+
+$has_feedback = false;
+$feedbackData = null;
+
+if (mysqli_num_rows($feedback_q) > 0) {
+    $has_feedback = true;
+    $feedbackData = mysqli_fetch_assoc($feedback_q);
+}
 ?>
