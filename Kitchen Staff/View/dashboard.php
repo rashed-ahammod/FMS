@@ -26,16 +26,14 @@ if (!isset($_SESSION['admin'])) {
 
 </head>
 <body>
-    <div class="dashboard_header">
-        <div class="logo">Online Food Service Management</div>
-        <div class="profile">
-            <span class="profile_name">Profile</span>
-            <div class="options">
-                <a href="profile.php">My Profile</a>
-                <a href="">Change Password</a>
-                <a href="">Logout</a>
-</div>
-</div>
+<div class="dashboard_header">
+    <div class="logo">Online Food Service Management</div>
+
+    <div class="logout-box">
+        <a href="../Controller/logoutController.php" class="logout-btn">
+            Logout
+        </a>
+    </div>
 </div>
 <div class="dashboard">
     <h1>Kitchen Staff Dashboard</h1>
@@ -51,12 +49,12 @@ if (!isset($_SESSION['admin'])) {
         <a href="../View/orderHistory.php" class ="feature">
             <h2>Order History</h2>
                 <p>All Completed Order History</p>
-</a>
+<!-- </a>
         <a href="" class ="feature">
             <h2>Availability</h2>
                 <p>Set Food item wether availabe or unavailabe</p>
-</a>
-        <a href="" class ="feature">
+</a> -->
+        <a href="feedback.php" class ="feature">
             <h2>Review</h2>
                 <p>Customer Feedback</p>
 </a>

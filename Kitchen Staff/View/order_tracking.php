@@ -33,7 +33,11 @@ $orders = getKitchenOrders();
         <a href="../View/manage_menu.php" class="active">Manage Menu</a>
         <a href="../View/orderHistory.php">Order History</a>
         <a href="../View/feedback.php">Feedback</a>
+<<<<<<< HEAD
         <a href="../View/login.php" class="logout">Logout</a>
+=======
+        <a href="../Controller/logoutController.php" class="logout">Logout</a>
+>>>>>>> 5ad94e1b20db746e47293162772cdba56cc3c8c7
     </div>
 </div>
 
