@@ -12,7 +12,7 @@ if (!isset($_POST['Login_btn']) && isset($_COOKIE['remember_role'])) {
 
     if ($_COOKIE['remember_role'] === 'admin') {
         $_SESSION['admin'] = true;
-        header("Location: /FMS2/Kitchen Staff/View/dashboard.php");
+        header("Location: /FMS/Kitchen Staff/View/dashboard.php");
         exit();
     }
 
@@ -28,7 +28,7 @@ if (!isset($_POST['Login_btn']) && isset($_COOKIE['remember_role'])) {
             $_SESSION['accountType'] = 'customer';
             $_SESSION['cart'] = [];
 
-            header("Location: /FMS2/Customer/View/CustomerDashboard.php");
+            header("Location: /FMS/Customer/View/CustomerDashboard.php");
             exit();
         }
     }
@@ -73,7 +73,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 setcookie("remember_role", "admin", time() + (86400 * 7), "/");
             }
 
-            header("Location: /FMS2/Kitchen Staff/View/dashboard.php");
+            header("Location: /FMS/Kitchen Staff/View/dashboard.php");
             exit();
         
         //echo "<script>
@@ -103,7 +103,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 setcookie("remember_role", "customer", time() + (86400 * 7), "/");
             }
 
-            header("Location: /FMS2/Customer/View/CustomerDashboard.php");
+            header("Location: /FMS/Customer/View/CustomerDashboard.php");
             exit();
            // echo"<script>
             //alert('Login Successful');
