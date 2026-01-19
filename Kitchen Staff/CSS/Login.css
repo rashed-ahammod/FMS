@@ -22,15 +22,16 @@ form
         color: #589fe2;
     }
 
-    input
-    {
-        border: none;
-        border-bottom: 2px solid #555;
-        width: 95%;
-        padding: 10px;
-        margin-top: 15px;
-        background: transparent;
-    }
+input[type="email"],
+input[type="password"] {
+    border: none;
+    border-bottom: 2px solid #555;
+    width: 95%;
+    padding: 10px;
+    margin-top: 15px;
+    background: transparent;
+}
+
 
     button
     {
@@ -42,6 +43,8 @@ form
         font-size: 16px;
         border-radius: 5px;
         transition: all 0.3s ease;
+          display: block;
+    margin: 30px auto 0 auto;
     }
     button:hover 
     {
@@ -56,3 +59,25 @@ form
         text-align: center;
         margin-top: 20px;
     }
+
+    .remember-box {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0 18px;
+    font-size: 14px;
+    color: #333;
+}
+
+.remember-box input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+      width: auto;
+    margin: 0;
+    cursor: pointer;
+}
+
+.remember-box label {
+    cursor: pointer;
+    user-select: none;
+}
