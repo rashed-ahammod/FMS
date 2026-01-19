@@ -118,7 +118,7 @@ input[type="password"] {
         margin-top: 20px;
     }
 
-    .remember-box {
+.remember-box {
     display: flex;
     align-items: center;
     gap: 8px;
