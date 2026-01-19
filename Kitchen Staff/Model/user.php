@@ -1,36 +1,16 @@
 <?php
 require_once 'connection.php';
+function regUser($user){
+    global $conn; 
 
-function getOrderHistory() {
-    $conn = getConnection();
 
-    $sql = "
-        SELECT 
-            order_id,
-            user_id,
-            order_time,
-            order_status,
-            total_amount
-        FROM orders
-        WHERE order_status IN ('Delivered','Cancelled')
-        ORDER BY order_time DESC
-    ";
+    $sql = "INSERT INTO user (`Name`, `Contact No`, `Address`, `Email`, `Password`, `Account Type`) 
+            VALUES ('{$user['name']}', '{$user['contactno']}', '{$user['address']}', '{$user['email']}', '{$user['password']}', '{$user['accountType']}')";
 
-    return mysqli_query($conn, $sql);
+    if(mysqli_query($conn, $sql)){
+        return true;
+    } else {
+        echo "SQL Error: " . mysqli_error($conn); 
+        return false;
+    }
 }
-
-
-function getTodaySummary() {
-    $conn = getConnection();
-
-    $sql = "
-        SELECT 
-            COUNT(*) AS total_orders,
-            COALESCE(SUM(total_amount),0) AS total_payment
-        FROM orders
-        WHERE order_status = 'Delivered'
-    ";
-
-    return mysqli_fetch_assoc(mysqli_query($conn, $sql));
-}
-

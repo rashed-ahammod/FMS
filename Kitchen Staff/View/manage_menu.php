@@ -38,7 +38,7 @@ $menus = getAllMenu();
         <a href="../View/order_tracking.php" class="active">Order Tracking</a>
         <a href="../View/orderHistory.php">Order History</a>
         <a href="../View/feedback.php">Feedback</a>
-        <a href="../View/logout.php" class="logout">Logout</a>
+        <a href="../Controller/logoutController.php" class="logout">Logout</a>
     </div>
 </div>
 
