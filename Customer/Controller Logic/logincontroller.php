@@ -63,6 +63,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['Email'] = $row['Email'];
+            $_SESSION['Name']    = $row['Name'];
             $_SESSION['accountType'] = 'customer';
             $_SESSION['cart'] = [];
 

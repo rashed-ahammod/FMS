@@ -11,7 +11,7 @@
 <div class="navbar">
     <h2>Raphael's Kitchen</h2>
     <div class="nav-links">
-        <span>Hi, <?php echo htmlspecialchars($user_email); ?></span>
+        <span>Hi, <?php echo htmlspecialchars($user_name); ?></span>
         <a href="../View/Profile.php">My Profile</a>
         <a href="#">My Cart (<?php echo $cart_count; ?>)</a>
         <a href="../View/Order.php">My Orders</a>
