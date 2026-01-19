@@ -26,6 +26,19 @@ $feedbacks = getAllFeedbacks();
 </head>
 <body>
 
+<div class="header">
+    <div class="logo">
+        <span>Kitchen Panel</span>
+    </div>
+
+    <div class="nav-buttons">
+        <a href="../View/dashboard.php">Home</a>
+        <a href="../View/manage_menu.php">Manage Menu</a>
+        <a href="../View/order_tracking.php" class="active">Order Tracking</a>
+        <a href="../View/orderHistory.php">Order History</a>
+         <a href="../Controller/logoutController.php" class="logout">Logout</a>
+    </div>
+</div>
 <h2>Customer Feedback</h2>
 
 <table>
