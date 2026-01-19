@@ -24,6 +24,11 @@ include '../Controller Logic/logincontroller.php';
         Password:<br>
         <input type="password" id="password" name="password" required placeholder="Please write your password">
         <?php echo $passErr; ?>
+
+            <input type="checkbox" name="remember_me"
+        <?php if(isset($_COOKIE['remember_email'])) echo "checked"; ?>>
+    Remember Me
+    <br><br><br>
         
         <br><br><br><br>
         <button type="submit" name="Login_btn">Login</button>

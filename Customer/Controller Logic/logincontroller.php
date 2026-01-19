@@ -36,12 +36,20 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($email === 'admin@gmail.com' && $password === '123') {
 
         $_SESSION['admin'] = true;
+        
 
-        echo "<script>
-            alert('Kitchen Staff Login Successful');
-            window.location.href = '/FMS/Kitchen Staff/View/dashboard.php';
-        </script>";
-        exit();
+                    if (isset($_POST['remember_me'])) {
+                setcookie("remember_email", $email, time() + (86400 * 7), "/");
+                setcookie("remember_role", "admin", time() + (86400 * 7), "/");
+            }
+
+            header("Location: /FMS/Kitchen Staff/View/dashboard.php");
+            exit();
+        // echo "<script>
+        //     alert('Kitchen Staff Login Successful');
+        //     window.location.href = '/FMS/Kitchen Staff/View/dashboard.php';
+        // </script>";
+        // exit();
     }
     
         $safe_email = mysqli_real_escape_string($conn, $email);
@@ -58,11 +66,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION['accountType'] = 'customer';
             $_SESSION['cart'] = [];
 
-            echo"<script>
-            alert('Login Successful');
-            window.location.href = 'CustomerDashboard.php';           
-            </script>";
-            $loginSuccess = true;
+            if (isset($_POST['remember_me'])) {
+                setcookie("remember_email", $row['Email'], time() + (86400 * 7), "/");
+                setcookie("remember_role", "customer", time() + (86400 * 7), "/");
+            }
+
+            header("Location: /FMS/Customer/View/CustomerDashboard.php");
+            exit();
+            // echo"<script>
+            // alert('Login Successful');
+            // window.location.href = 'CustomerDashboard.php';           
+            // </script>";
+            // $loginSuccess = true;
         } 
         else 
         {
