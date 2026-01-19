@@ -121,5 +121,16 @@ if (is_array($data) && isset($data['action'])) {
 
         exit;
     }
+           if ($data['action'] === 'delete') {
+
+        $menu_id = intval($data['menu_id']);
+
+        $success = deleteMenu($menu_id);
+
+        echo json_encode([
+            "success" => $success
+        ]);
+        exit;
+    }
 }
 ?>

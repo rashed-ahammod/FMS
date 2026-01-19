@@ -116,9 +116,8 @@ $menus = getAllMenu();
 
 <td>
         <button type="button"  onclick="UpdateStatus(<?php echo $menuId; ?>)"> Update</button>
-        <a href="../Controller/manage_menuController.php?delete=<?= $row['menu_id'] ?>" 
-        onclick="return confirm('Are you sure you want to delete this item?')">Delete</a>
-    
+       <a href="../Controller/manage_menuController.php?delete=<?= $row['menu_id'] ?>" 
+        onclick=" deleteMenu(<?= $menuId ?>)">Delete</a>
 
 </td>
 </tr>
