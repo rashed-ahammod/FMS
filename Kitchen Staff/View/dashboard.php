@@ -26,16 +26,14 @@ if (!isset($_SESSION['admin'])) {
 
 </head>
 <body>
-    <div class="dashboard_header">
-        <div class="logo">Online Food Service Management</div>
-        <div class="profile">
-            <span class="profile_name">Profile</span>
-            <div class="options">
-                <a href="profile.php">My Profile</a>
-                <a href="">Change Password</a>
-                <a href="">Logout</a>
-</div>
-</div>
+<div class="dashboard_header">
+    <div class="logo">Online Food Service Management</div>
+
+    <div class="logout-box">
+        <a href="../Controller/logoutController.php" class="logout-btn">
+            Logout
+        </a>
+    </div>
 </div>
 <div class="dashboard">
     <h1>Kitchen Staff Dashboard</h1>
