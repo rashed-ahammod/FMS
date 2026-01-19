@@ -32,14 +32,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Check database
     if (empty($emailErr) && empty($passErr))
     {
-        
-        if ($email === 'admin' && $password === '123') {
+
+        if ($email === 'admin@gmail.com' && $password === '123') {
 
         $_SESSION['admin'] = true;
 
         echo "<script>
             alert('Kitchen Staff Login Successful');
-            window.location.href = '../Kitchen Staff/View/dashboard.php';
+            window.location.href = '/FMS/Kitchen Staff/View/dashboard.php';
         </script>";
         exit();
     }
