@@ -11,7 +11,7 @@ if(!isset($_SESSION['user_id']))
     exit();
 }
 
-$user_email = $_SESSION['Email'];
+$user_name = $_SESSION['Name'];
 
 $sql = "SELECT * FROM menu";
 

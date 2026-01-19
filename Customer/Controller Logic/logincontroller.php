@@ -4,6 +4,36 @@ session_start();
 
 include '../Model/db.php';
 
+if (isset($_SESSION['user_id']) || isset($_SESSION['admin'])) {
+    return;
+}
+
+if (!isset($_POST['Login_btn']) && isset($_COOKIE['remember_role'])) {
+
+    if ($_COOKIE['remember_role'] === 'admin') {
+        $_SESSION['admin'] = true;
+        header("Location: /FMS2/Kitchen Staff/View/dashboard.php");
+        exit();
+    }
+
+    if ($_COOKIE['remember_role'] === 'customer' && isset($_COOKIE['remember_email'])) {
+
+        $email = mysqli_real_escape_string($conn, $_COOKIE['remember_email']);
+        $res = mysqli_query($conn, "SELECT * FROM user WHERE Email='$email'");
+
+        if ($row = mysqli_fetch_assoc($res)) {
+            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['Email'] = $row['Email'];
+            $_SESSION['Name'] = $row['Name'];
+            $_SESSION['accountType'] = 'customer';
+            $_SESSION['cart'] = [];
+
+            header("Location: /FMS2/Customer/View/CustomerDashboard.php");
+            exit();
+        }
+    }
+}
+
 $email = $password = "";
 $emailErr = $passErr = "";
 $loginSuccess = false;
@@ -38,17 +68,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['admin'] = true;
         
 
-                    if (isset($_POST['remember_me'])) {
+         if (isset($_POST['remember_me'])) {
                 setcookie("remember_email", $email, time() + (86400 * 7), "/");
                 setcookie("remember_role", "admin", time() + (86400 * 7), "/");
             }
 
-            header("Location: /FMS/Kitchen Staff/View/dashboard.php");
+            header("Location: /FMS2/Kitchen Staff/View/dashboard.php");
             exit();
-        // echo "<script>
-        //     alert('Kitchen Staff Login Successful');
-        //     window.location.href = '/FMS/Kitchen Staff/View/dashboard.php';
-        // </script>";
+        
+        //echo "<script>
+          //  alert('Kitchen Staff Login Successful');
+            // window.location.href = '../Kitchen Staff/View/dashboard.php';
+        //</script>";
         // exit();
     }
     
@@ -63,6 +94,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             $_SESSION['user_id'] = $row['user_id'];
             $_SESSION['Email'] = $row['Email'];
+            $_SESSION['Name']    = $row['Name'];
             $_SESSION['accountType'] = 'customer';
             $_SESSION['cart'] = [];
 
@@ -71,13 +103,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 setcookie("remember_role", "customer", time() + (86400 * 7), "/");
             }
 
-            header("Location: /FMS/Customer/View/CustomerDashboard.php");
+            header("Location: /FMS2/Customer/View/CustomerDashboard.php");
             exit();
-            // echo"<script>
-            // alert('Login Successful');
-            // window.location.href = 'CustomerDashboard.php';           
-            // </script>";
-            // $loginSuccess = true;
+           // echo"<script>
+            //alert('Login Successful');
+           // window.location.href = 'CustomerDashboard.php';           
+            //</script>";
+            //$loginSuccess = true;
         } 
         else 
         {
