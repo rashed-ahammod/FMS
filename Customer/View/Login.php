@@ -26,9 +26,7 @@ include '../Controller Logic/logincontroller.php';
         <?php echo $passErr; ?>
            <br><br>
             <input type="checkbox" name="remember_me"
-        <?php if(isset($_COOKIE['remember_email'])) echo "checked"; ?>>
-    Remember Me
-    <br>
+        <?php if(isset($_COOKIE['remember_email'])) echo "checked"; ?>> Remember Me
         
         <br><br>
         <button type="submit" name="Login_btn">Login</button>
