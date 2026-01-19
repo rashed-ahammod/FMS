@@ -1,7 +1,7 @@
 <?php 
 session_start();
 
-/* 🔁 Restore session from cookie */
+
 if (!isset($_SESSION['admin']) && isset($_COOKIE['remember_role'])) {
     if ($_COOKIE['remember_role'] === 'admin') {
         $_SESSION['admin'] = true;
@@ -10,11 +10,11 @@ if (!isset($_SESSION['admin']) && isset($_COOKIE['remember_role'])) {
 
 if (!isset($_SESSION['user_id']) && isset($_COOKIE['remember_role'])) {
     if ($_COOKIE['remember_role'] === 'customer') {
-        $_SESSION['user_id'] = true; // flag only
+        $_SESSION['user_id'] = true; 
     }
 }
 
-/* 🚀 Auto redirect if already logged in */
+
 if (isset($_SESSION['admin'])) {
     header("Location: /FMS/Kitchen Staff/View/dashboard.php");
     exit();
