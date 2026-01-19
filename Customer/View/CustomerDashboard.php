@@ -43,7 +43,8 @@ if (mysqli_num_rows($result) > 0) {
 ?>
         <div class="food-card">
             <div class="food-img-box">
-                <img src="../Images/<?php echo $row['image']; ?>" alt="Food">
+                <img src="/FMS/Kitchen Staff/images/<?php echo htmlspecialchars($row['image']); ?>" alt="Food">
+
         </div>
 
         <div class="food-info">
@@ -117,7 +118,7 @@ if (mysqli_num_rows($result) > 0) {
 
             <div class="cart-actions">
 
-                <form method="post" action="/FMS2/Customer/Controller Logic/OrderController.php">
+                <form method="post" action="/FMS/Customer/Controller Logic/OrderController.php">
                      <button type="submit" name="checkout" class="checkout-btn">
                          Checkout
                      </button>
